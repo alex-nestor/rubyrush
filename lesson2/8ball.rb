@@ -1,4 +1,4 @@
-@answers = [
+@answers_en = [
     #Positive
     'It is certain', 'It is decidedly so', 'Without a doubt',
     'Yes — definitely', 'You may rely on it',
@@ -26,24 +26,22 @@
 ]
 
 def check_lang(lang)
-    lang.to_i
-    if lang == 1 
+    lang.to_s
+    if lang == 'en'
         puts 'Ask a question'
-        question = gets
-        puts @answers.sample
-        return
-    elsif lang == 2
+    elsif lang == 'ua'
         puts 'Задавайте своє запитання'
-        question = gets
-        puts @answers_ua.sample
-        return
     else 
-        puts 'Please, enter number 1 or 2'
+        puts 'Enter a valid string'
     end
 end
 
 puts "What language do you prefer?
-Please, put 1 in case of English, and 2 in case of Ukrainian."
+Please, put 'en' in case of English, and 'ua' in case of Ukrainian."
 
-lang = gets.to_i
-check_lang(lang)
+lang = gets
+check_lang(lang) #! Method do not accept value
+question = gets
+answer = "@answers_#{lang}" #! String should be converted to variable
+puts answer.chomp.sample
+
