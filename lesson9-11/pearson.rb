@@ -1,9 +1,12 @@
 class Pearson
-  def initialize(name, surname, age)
+  def initialize(name, surname, age, film = nil)
     @name = name
     @surname = surname
     @age = age
+    @film = film
   end
+
+  attr_accessor :name, :age, :film, :surname
 
   def full_name
     if old?
