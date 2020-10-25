@@ -1,0 +1,7 @@
+Style/FrozenStringLiteralComment:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7.2
